@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @forum.title %></h1>
+
+<div>
+  <%= @forum.description %>
+</div>
+
+<h2>Topics</h2>
+<div id="topics">
+  <% @topics.each do |topic| %>
+  <div class="topic">
+    <span class="title"><%= link_to topic.title, forum_topic_path(@forum, topic) %></span> - 
+    <span class="description"><%= topic.description%></span>
+  </div>
+  <% end %>
+</div>
+
+<br/>
+
+<% if admin? %>
+<%= link_to 'Edit Forum', edit_forum_path(@forum) %> |
+<%= link_to 'New Topic', new_forum_topic_path(@forum) %> |
+<% end %>
+<%= link_to 'Back', forums_path %>

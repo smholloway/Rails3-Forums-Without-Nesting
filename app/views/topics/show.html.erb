@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @topic.title %></h1>
+
+<div>
+  <%= @topic.description %>
+</div>
+
+<br/>
+
+<%= render 'comments/form' %>
+
+<br/>
+
+<h2> Comments </h2>
+<div id="comments">
+  <%= render @comments %>
+</div>
+
+<br/>
+
+<% if admin? %>
+<%= link_to 'Edit Topic', edit_forum_topic_path(@forum, @topic) %> |
+<% end %>
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Forum Topics', forum_topics_path(@forum) %>

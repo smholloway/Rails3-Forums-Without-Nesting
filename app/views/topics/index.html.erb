@@ -1,0 +1,17 @@
+<h1>Listing topics</h1>
+
+<div id="topics">
+  <% @topics.each do |topic| %>
+  <div class="topic">
+    <span class="title"><%= link_to topic.title, forum_topic_path(@forum, topic) %></span> - 
+    <span class="description"><%= topic.description %></span>
+  </div>
+  <% end %>
+</div>
+
+<br />
+
+<% if admin? %>
+<%= link_to 'New Topic', new_forum_topic_path(@forum) %> | 
+<% end %>
+<%= link_to 'Forums', forums_path %>
