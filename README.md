@@ -2,7 +2,6 @@ Rails3-Forums-Without-Nesting
 ============
 A simple forum application written using Rails 3 
 Seth Holloway (www.sethholloway.com)
-A demo is available at http://rails3-forums-without-nesting.heroku.com/
 
 This example differs from the Rails3-forum project by cutting out extra routes. This application has only forums/id/topics/id, while the previous example had forums/id/topics/id and topics/id.
 
